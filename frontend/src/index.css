@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #ff4fa3;
+  --primary-dark: #e63e90;
+
+  --bg-dark: #09090b;
+  --bg-light: #f4f4f5;
+
+  --card-dark: rgba(24, 24, 27, 0.72);
+  --card-light: rgba(255, 255, 255, 0.75);
+
+  --border-dark: rgba(255,255,255,0.08);
+  --border-light: rgba(0,0,0,0.06);
+
+  --shadow-pink:
+    0 0 20px rgba(255,79,163,0.25);
+
+  --shadow-dark:
+    0 10px 30px rgba(0,0,0,0.35);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+
+  background: var(--bg-dark);
+
+  color: white;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* SCROLL */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 999px;
+}
+
+/* LEAFLET */
+.leaflet-container {
+  z-index: 0;
+  background: #0a0a0a;
+}
+
+/* GLASS EFFECT */
+.glass {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(255,255,255,0.06);
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.28);
+}
+
+/* PREMIUM CARD */
+.premium-card {
+  border-radius: 28px;
+
+  backdrop-filter: blur(20px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.25);
+}
+
+/* BUTTON GLOW */
+.glow-button {
+  box-shadow:
+    0 0 20px rgba(255,79,163,0.35);
+}
+
+/* HOVER EFFECT */
+.hover-lift {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* GPS */
+.gps-marker {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.gps-dot {
+  width: 16px;
+  height: 16px;
+
+  background: #3b82f6;
+
+  border: 3px solid white;
+
+  border-radius: 999px;
+
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  z-index: 10;
+
+  box-shadow:
+    0 0 20px #3b82f6;
+}
+
+.gps-pulse {
+  width: 40px;
+  height: 40px;
+
+  background:
+    rgba(59, 130, 246, 0.35);
+
+  border-radius: 999px;
+
+  position: absolute;
+
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* FADE IN */
+.fade-in {
+  animation:
+    fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.leaflet-tile {
+  transition: opacity 0.6s ease-in-out;
+}
