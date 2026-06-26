@@ -11,5 +11,5 @@ app.get('/', (req, res) => {
         mensaje: 'API SafeWoman funcionando'
     });
 });
-
+//asd
 module.exports = app;
