@@ -53,3 +53,8 @@ CREATE TABLE reports (
     FOREIGN KEY(user_id)
         REFERENCES users(id)
 );
+
+-- Modificación: agregar estado de validación a los reportes
+ALTER TABLE reports
+ADD COLUMN status VARCHAR(20) NOT NULL DEFAULT 'Pendiente'
+CHECK (status IN ('Pendiente', 'Validado', 'Rechazado'));
